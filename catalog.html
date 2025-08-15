@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - OFMEDICAL SAS</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-container">
+        <a href="./index.html" class="logo">
+            <img src="./assets/images/logo.png" alt="Logo OFMEDICAL SAS">
+        </a>
+        
+        <nav class="navbar">
+            <a href="./index.html">Inicio</a>
+            <a href="./catalog.html">Catálogo</a>
+        </nav>
+
+        <div class="header-right">
+            <a href="./cart.html" class="cart-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-counter" id="cart-counter">0</span>
+            </a>
+
+            <button id="menu-toggle" class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div id="mobile-menu" class="mobile-menu">
+        <a href="./index.html">Inicio</a>
+        <a href="./catalog.html">Catálogo</a>
+    </div>
+</header>
+
+    <main>
+        <section class="catalog-header content-section">
+            <h2>Nuestro Catálogo de Productos</h2>
+            <p>Encuentra la solución perfecta para tus necesidades de salud y bienestar.</p>
+        </section>
+
+        <div class="filter-container">
+            <button class="filter-btn active" data-category="all">Todos</button>
+            <button class="filter-btn" data-category="ofmedical">Of Medical</button>
+            <button class="filter-btn" data-category="verdepower">Verde Power</button>
+        </div>
+
+        <div id="product-grid" class="product-grid"></div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Contáctanos</h3>
+            <p>Estamos aquí para asesorarte. ¡Hablemos!</p>
+            <ul class="contact-info">
+                <li><i class="fa-solid fa-phone"></i> Teléfono: +57 300 123 4567</li>
+                <li><i class="fa-solid fa-envelope"></i> Email: contacto@ofmedical.com</li>
+                <li>
+                    <a href="https://wa.me/573001234567?text=Hola,%20quisiera%20solicitar%20más%20información." target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enviar mensaje por WhatsApp
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OFMEDICAL SAS. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="./js/products.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

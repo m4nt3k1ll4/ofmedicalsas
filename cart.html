@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Cotización - OFMEDICAL SAS</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-container">
+        <a href="./index.html" class="logo">
+            <img src="./assets/images/logo.png" alt="Logo OFMEDICAL SAS">
+        </a>
+        
+        <nav class="navbar">
+            <a href="./index.html">Inicio</a>
+            <a href="./catalog.html">Catálogo</a>
+        </nav>
+
+        <div class="header-right">
+            <a href="./cart.html" class="cart-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-counter" id="cart-counter">0</span>
+            </a>
+
+            <button id="menu-toggle" class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div id="mobile-menu" class="mobile-menu">
+        <a href="./index.html">Inicio</a>
+        <a href="./catalog.html">Catálogo</a>
+    </div>
+</header>
+
+    <main>
+        <section class="content-section">
+            <h2>Resumen de tu Cotización</h2>
+            <p>Verifica los productos, ajusta las cantidades y solicita tu asesoría con un clic.</p>
+        </section>
+
+        <div class="cart-page-container">
+            <div id="cart-items-container" class="cart-items-list">
+                </div>
+
+            <div id="cart-summary-container" class="cart-summary">
+                <h3>Resumen</h3>
+                <div class="summary-row">
+                    <span>Total de Productos:</span>
+                    <span id="total-items">0</span>
+                </div>
+                <button id="checkout-btn" class="btn btn-primary btn-full-width">
+                    <i class="fa-brands fa-whatsapp"></i> Solicitar Asesoría por WhatsApp
+                </button>
+            </div>
+            
+            <div id="empty-cart-message" class="empty-cart-message" style="display: none;">
+                <h3>Tu carrito está vacío</h3>
+                <p>Añade productos desde nuestro catálogo para solicitar una cotización.</p>
+                <a href="./catalog.html" class="btn btn-primary">Ir al Catálogo</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        </footer>
+
+    <script src="./js/products.js"></script> 
+    <script src="./js/cart.js"></script>
+</body>
+</html>
