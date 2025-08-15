@@ -15,12 +15,13 @@
             <img src="./assets/images/logo.png" alt="Logo OFMEDICAL SAS">
         </a>
         
-        <nav class="navbar">
-            <a href="./index.html">Inicio</a>
-            <a href="./catalog.html">Catálogo</a>
-        </nav>
-
         <div class="header-right">
+            <nav class="navbar">
+                <a href="./index.html">Inicio</a>
+                <a href="./catalog.html">Catálogo</a>
+                <a href="./services.html">Servicios</a>
+            </nav>
+
             <a href="./cart.html" class="cart-icon">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span class="cart-counter" id="cart-counter">0</span>
@@ -35,6 +36,7 @@
     <div id="mobile-menu" class="mobile-menu">
         <a href="./index.html">Inicio</a>
         <a href="./catalog.html">Catálogo</a>
+        <a href="./services.html">Servicios</a>
     </div>
 </header>
 
@@ -44,11 +46,12 @@
             <p>Encuentra la solución perfecta para tus necesidades de salud y bienestar.</p>
         </section>
 
-        <div class="filter-container">
-            <button class="filter-btn active" data-category="all">Todos</button>
-            <button class="filter-btn" data-category="ofmedical">Of Medical</button>
-            <button class="filter-btn" data-category="verdepower">Verde Power</button>
-        </div>
+<div class="filter-container">
+    <button class="filter-btn active" data-category="all">Todos</button>
+    <button class="filter-btn" data-category="dispositivos">Dispositivos Medicos</button>
+    <button class="filter-btn" data-category="natural">Medicina Natural</button>
+    <button class="filter-btn" data-category="verdepower">Verde Power</button>
+</div>
 
         <div id="product-grid" class="product-grid"></div>
 
