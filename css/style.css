@@ -139,7 +139,7 @@ body {
     display: none;
     flex-direction: column;
     background-color: var(--dark-blue);
-    position: absolute;
+    position: sticky;
     top: var(--header-height);
     left: 0;
     width: 100%;
@@ -234,31 +234,25 @@ body.mobile-menu-open .mobile-menu {
 .cta-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    /* Ajuste para mejor distribución */
     gap: 2.5rem;
     padding: 3rem 1.5rem 5rem;
-    /* Más padding para destacar */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .cta-card {
     background-color: var(--white);
-    /* Fondo blanco para más contraste */
     border-radius: var(--radius);
     padding: 3rem;
     text-align: center;
     color: var(--dark-blue);
-    /* Texto en azul oscuro */
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    /* Sombra sutil */
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-top: 5px solid var(--golden-yellow);
-    /* Línea superior dorada más visible */
 }
 
 .cta-card:hover {
@@ -291,7 +285,7 @@ body.mobile-menu-open .mobile-menu {
     box-shadow: 0 6px 15px rgba(239, 218, 160, 0.8);
 }
 
-/* Estilos específicos para la tarjeta de Verde Power */
+/*==============================verdepower======================*/
 .cta-card.verdepower-cta {
     border-top-color: var(--vp-green);
 }
@@ -369,27 +363,21 @@ body.mobile-menu-open .mobile-menu {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    /* ✨ Corregido: Un poco más de espacio entre botones */
     flex-wrap: wrap;
     margin-bottom: 4rem;
-    /* ✨ Corregido: Espacio vertical para separar de los productos */
 }
 
 .filter-btn {
     background-color: var(--white);
     border: 1px solid #e0e0e0;
-    /* ✨ Corregido: Borde más sutil */
     color: var(--slate-gray);
     padding: 0.8rem 2rem;
-    /* ✨ Corregido: Botones más grandes */
     border-radius: 50px;
     cursor: pointer;
     font-weight: 600;
     font-size: 0.95rem;
-    /* ✨ Corregido: Texto ligeramente más grande */
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    /* ✨ Corregido: Sombra sutil por defecto */
 }
 
 .filter-btn:hover {
