@@ -233,26 +233,32 @@ body.mobile-menu-open .mobile-menu {
 /* ======================= CTA CONTAINER ======================= */
 .cta-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Ajuste para mejor distribución */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* Ajuste para mejor distribución */
     gap: 2.5rem;
-    padding: 3rem 1.5rem 5rem; /* Más padding para destacar */
+    padding: 3rem 1.5rem 5rem;
+    /* Más padding para destacar */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .cta-card {
-    background-color: var(--white); /* Fondo blanco para más contraste */
+    background-color: var(--white);
+    /* Fondo blanco para más contraste */
     border-radius: var(--radius);
     padding: 3rem;
     text-align: center;
-    color: var(--dark-blue); /* Texto en azul oscuro */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Sombra sutil */
+    color: var(--dark-blue);
+    /* Texto en azul oscuro */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    /* Sombra sutil */
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: 5px solid var(--golden-yellow); /* Línea superior dorada más visible */
+    border-top: 5px solid var(--golden-yellow);
+    /* Línea superior dorada más visible */
 }
 
 .cta-card:hover {
@@ -274,36 +280,36 @@ body.mobile-menu-open .mobile-menu {
 }
 
 .cta-card .btn {
-    background-color: var(--golden-yellow); 
+    background-color: var(--golden-yellow);
     color: var(--dark-blue);
     box-shadow: 0 4px 12px rgba(239, 218, 160, 0.6);
 }
 
 .cta-card .btn:hover {
-    background-color: #d4b76d; 
+    background-color: #d4b76d;
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(239, 218, 160, 0.8);
 }
 
 /* Estilos específicos para la tarjeta de Verde Power */
 .cta-card.verdepower-cta {
-    border-top-color: var(--vp-green); 
+    border-top-color: var(--vp-green);
 }
 
 .cta-card.verdepower-cta h2,
 .cta-card.verdepower-cta p {
-    color: var(--vp-green); 
+    color: var(--vp-green);
 }
 
 .cta-card.verdepower-cta .btn {
-    background-color: var(--vp-green); 
+    background-color: var(--vp-green);
     color: var(--white);
     border-color: var(--vp-green);
     box-shadow: 0 4px 12px rgba(97, 167, 86, 0.6);
 }
 
 .cta-card.verdepower-cta .btn:hover {
-    background-color: #529148; 
+    background-color: #529148;
     box-shadow: 0 6px 15px rgba(97, 167, 86, 0.8);
 }
 
@@ -362,22 +368,28 @@ body.mobile-menu-open .mobile-menu {
 .filter-container {
     display: flex;
     justify-content: center;
-    gap: 1.5rem; /* ✨ Corregido: Un poco más de espacio entre botones */
+    gap: 1.5rem;
+    /* ✨ Corregido: Un poco más de espacio entre botones */
     flex-wrap: wrap;
-    margin-bottom: 4rem; /* ✨ Corregido: Espacio vertical para separar de los productos */
+    margin-bottom: 4rem;
+    /* ✨ Corregido: Espacio vertical para separar de los productos */
 }
 
 .filter-btn {
     background-color: var(--white);
-    border: 1px solid #e0e0e0; /* ✨ Corregido: Borde más sutil */
+    border: 1px solid #e0e0e0;
+    /* ✨ Corregido: Borde más sutil */
     color: var(--slate-gray);
-    padding: 0.8rem 2rem; /* ✨ Corregido: Botones más grandes */
+    padding: 0.8rem 2rem;
+    /* ✨ Corregido: Botones más grandes */
     border-radius: 50px;
     cursor: pointer;
     font-weight: 600;
-    font-size: 0.95rem; /* ✨ Corregido: Texto ligeramente más grande */
+    font-size: 0.95rem;
+    /* ✨ Corregido: Texto ligeramente más grande */
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* ✨ Corregido: Sombra sutil por defecto */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    /* ✨ Corregido: Sombra sutil por defecto */
 }
 
 .filter-btn:hover {
@@ -695,9 +707,13 @@ body.mobile-menu-open .mobile-menu {
     z-index: -1;
 }
 
-/* ======================= MEDIA QUERIES ======================= */
-@media (min-width: 769px) {
 
+/* =================================================================== */
+/* MEDIA QUERIES PARA RESPONSIVIDAD */
+/* =================================================================== */
+
+/* Estilos para Escritorio (más de 768px) */
+@media (min-width: 769px) {
     .menu-toggle,
     .mobile-menu {
         display: none;
@@ -709,6 +725,7 @@ body.mobile-menu-open .mobile-menu {
     }
 }
 
+/* Estilos para Tablets y Móviles (menos de 768px) */
 @media (max-width: 768px) {
     .header {
         height: 70px;
@@ -727,6 +744,19 @@ body.mobile-menu-open .mobile-menu {
         font-size: 2.2rem;
     }
 
+    /* Contenedor de las tarjetas CTA en móvil */
+    .cta-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .cta-card {
+        width: 100%;
+        max-width: 400px;
+    }
+    
     .cta-card h2 {
         font-size: 1.8rem;
     }
@@ -745,21 +775,40 @@ body.mobile-menu-open .mobile-menu {
         gap: 1rem;
         align-items: center;
     }
+    .cart-item-image { grid-area: image; }
+    .cart-item-info { grid-area: info; align-self: center; }
+    .quantity-adjuster { grid-area: controls; }
+    .remove-btn { grid-area: remove; }
+    .patron-borroso::before {
+        background-size: 250px;
+        filter: blur(1.5px);
+    }
+}
 
-    .cart-item-image {
-        grid-area: image;
+/* Ajustes Adicionales para Móviles Pequeños (menos de 420px) */
+@media (max-width: 420px) {
+    .container,
+    .hero,
+    .footer-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
-    .cart-item-info {
-        grid-area: info;
-        align-self: center;
+    .services-grid,
+    .product-grid {
+        grid-template-columns: 1fr;
     }
 
-    .quantity-adjuster {
-        grid-area: controls;
+    .hero-content h1 {
+        font-size: 2.2rem;
     }
 
-    .remove-btn {
-        grid-area: remove;
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.9rem;
     }
 }
