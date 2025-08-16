@@ -307,50 +307,121 @@ body.mobile-menu-open .mobile-menu {
     box-shadow: 0 6px 15px rgba(97, 167, 86, 0.8);
 }
 
-/* ======================= FOOTER ======================= */
 .footer {
-    background: linear-gradient(180deg, var(--dark-blue), #021223);
+    background: var(--dark-blue);
     color: var(--white);
-    text-align: center;
-    padding-top: 4rem;
+    padding-top: 5rem;
 }
 
-.footer-content {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+.footer-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
+    padding-bottom: 4rem;
 }
 
-.contact-info {
+.footer-column {
+    flex: 1;
+    min-width: 280px;
+}
+
+.footer-column.about {
+    flex-basis: 40%;
+    /* Le da un poco más de espacio a la primera columna */
+}
+
+.footer-logo {
+    height: 60px;
+    width: auto;
+    margin-bottom: 1.5rem;
+}
+
+.footer-column p {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 350px;
+    line-height: 1.8;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.8rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--golden-yellow);
+}
+
+.footer-column h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--white);
+}
+
+.contact-list {
     list-style: none;
     padding: 0;
-    margin: 1.5rem 0;
 }
 
-.contact-info li {
-    margin-bottom: 1rem;
+.contact-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
 }
 
-.contact-info a {
-    color: var(--white);
+.contact-list i {
+    font-size: 1.2rem;
+    color: var(--golden-yellow);
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+}
+
+.contact-list a {
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: var(--transition);
 }
 
-.contact-info a:hover {
-    color: var(--golden-yellow);
-}
-
-.contact-info i {
-    margin-right: 0.8rem;
-    color: var(--golden-yellow);
+.contact-list a:hover {
+    color: var(--white);
 }
 
 .footer-bottom {
     background-color: rgba(0, 0, 0, 0.2);
     padding: 1.5rem;
+    text-align: center;
     font-size: 0.9rem;
-    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Ajuste para móvil en el footer */
+@media (max-width: 768px) {
+    .footer-main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contact-list li {
+        justify-content: center;
+        text-align: left;
+    }
 }
 
 /* ======================= PÁGINA DE CATÁLOGO ======================= */
@@ -702,6 +773,7 @@ body.mobile-menu-open .mobile-menu {
 
 /* Estilos para Escritorio (más de 768px) */
 @media (min-width: 769px) {
+
     .menu-toggle,
     .mobile-menu {
         display: none;
@@ -732,19 +804,18 @@ body.mobile-menu-open .mobile-menu {
         font-size: 2.2rem;
     }
 
-    /* Contenedor de las tarjetas CTA en móvil */
     .cta-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 2rem;
     }
-    
+
     .cta-card {
         width: 100%;
         max-width: 400px;
     }
-    
+
     .cta-card h2 {
         font-size: 1.8rem;
     }
@@ -763,40 +834,143 @@ body.mobile-menu-open .mobile-menu {
         gap: 1rem;
         align-items: center;
     }
-    .cart-item-image { grid-area: image; }
-    .cart-item-info { grid-area: info; align-self: center; }
-    .quantity-adjuster { grid-area: controls; }
-    .remove-btn { grid-area: remove; }
+
+    .cart-item-image {
+        grid-area: image;
+    }
+
+    .cart-item-info {
+        grid-area: info;
+        align-self: center;
+    }
+
+    .quantity-adjuster {
+        grid-area: controls;
+    }
+
+    .remove-btn {
+        grid-area: remove;
+    }
+
     .patron-borroso::before {
         background-size: 250px;
-        filter: blur(1.5px);
+    }
+
+/* ======================= AJUSTES DEL FOOTER PARA MÓVILES ======================= */
+@media (max-width: 768px) {
+    .footer {
+        padding-top: 3rem;
+    }
+
+    .footer-main {
+        /* Apila y centra los bloques (logo y lista de íconos) */
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    /* Oculta los elementos de texto que no se necesitan en móvil */
+    .footer-column.about p,
+    .footer-column.contact h3,
+    .contact-list span { /* Oculta el texto dentro de los enlaces */
+        display: none;
+    }
+
+    .footer-logo {
+        height: 50px;
+        margin: 0;
+    }
+
+    .contact-list {
+        /* Convierte la lista en una fila de íconos */
+        display: flex;
+        justify-content: center; /* Centra los íconos como grupo */
+        align-items: center;
+        gap: 2rem; /* Espacio entre cada ícono */
+        list-style: none;
+        padding: 0;
+    }
+    
+    .contact-list li {
+        margin: 0;
+    }
+
+    .contact-list a {
+        color: var(--white);
+        font-size: 1.8rem; /* Tamaño de los íconos */
+        transition: var(--transition);
+    }
+    
+    .contact-list a:hover {
+        color: var(--golden-yellow);
+        transform: scale(1.1);
     }
 }
 
-/* Ajustes Adicionales para Móviles Pequeños (menos de 420px) */
-@media (max-width: 420px) {
-    .container,
-    .hero,
-    .footer-content {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        /* --- Fin de los elementos ocultos --- */
+
+        .footer-column {
+            /* Resetea la base del flex para que los elementos se ajusten a su contenido */
+            flex-basis: auto;
+        }
+
+        .footer-logo {
+            height: 45px;
+            /* Un tamaño más adecuado para la fila de íconos */
+            margin: 0;
+        }
+
+        .contact-list {
+            /* Convierte la lista de contactos en una fila de íconos */
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .contact-list li {
+            margin-bottom: 0;
+            /* Elimina el margen vertical */
+        }
+
+        .contact-list a i {
+            font-size: 1.6rem;
+            /* Asegura que los íconos tengan buen tamaño */
+            margin: 0;
+        }
+
+        .social-links {
+            margin: 0;
+            font-size: 1.6rem;
+        }
     }
 
-    .services-grid,
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
+    /* Ajustes Adicionales para Móviles Pequeños (menos de 420px) */
+    @media (max-width: 420px) {
 
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
+        .container,
+        .hero,
+        .footer-content {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
 
-    .section-title h2 {
-        font-size: 2rem;
-    }
+        .services-grid,
+        .product-grid {
+            grid-template-columns: 1fr;
+        }
 
-    .btn {
-        padding: 0.8rem 1.8rem;
-        font-size: 0.9rem;
+        .hero-content h1 {
+            font-size: 2.2rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            font-size: 0.9rem;
+        }
     }
 }

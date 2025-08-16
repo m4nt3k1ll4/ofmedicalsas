@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,38 +9,39 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
 
-<header class="header">
-    <div class="container header-container">
-        <a href="./index.html" class="logo">
-            <img src="./assets/images/logo.png" alt="Logo OFMEDICAL SAS">
-        </a>
-        
-        <div class="header-right">
-            <nav class="navbar">
-                <a href="./index.html">Inicio</a>
-                <a href="./catalog.html">Catálogo</a>
-                <a href="./services.html">Servicios</a>
-            </nav>
-
-            <a href="./cart.html" class="cart-icon">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span class="cart-counter" id="cart-counter">0</span>
+    <header class="header">
+        <div class="container header-container">
+            <a href="./index.html" class="logo">
+                <img src="./assets/images/logo.png" alt="Logo OFMEDICAL SAS">
             </a>
 
-            <button id="menu-toggle" class="menu-toggle">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <div class="header-right">
+                <nav class="navbar">
+                    <a href="./index.html">Inicio</a>
+                    <a href="./catalog.html">Catálogo</a>
+                    <a href="./services.html">Servicios</a>
+                </nav>
+
+                <a href="./cart.html" class="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-counter" id="cart-counter">0</span>
+                </a>
+
+                <button id="menu-toggle" class="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </div>
-    </div>
-    
-    <div id="mobile-menu" class="mobile-menu">
-        <a href="./index.html">Inicio</a>
-        <a href="./catalog.html">Catálogo</a>
-        <a href="./services.html">Servicios</a>
-    </div>
-</header>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="./index.html">Inicio</a>
+            <a href="./catalog.html">Catálogo</a>
+            <a href="./services.html">Servicios</a>
+        </div>
+    </header>
 
     <main class="patron-borroso">
         <section class="section">
@@ -57,7 +59,7 @@
                 </div>
 
                 <div id="product-grid" class="product-grid"></div>
-                
+
                 <div id="no-results-message" class="no-results-message" style="display: none;">
                     <p>No se encontraron productos que coincidan con tu búsqueda.</p>
                 </div>
@@ -66,18 +68,46 @@
     </main>
 
     <footer class="footer">
-        <div class="footer-content">
-            <h3>Contáctanos</h3>
-            <p>Estamos aquí para asesorarte. ¡Hablemos!</p>
-            <ul class="contact-info">
-                <li><i class="fa-solid fa-phone"></i> Teléfono: +57 300 123 4567</li>
-                <li><i class="fa-solid fa-envelope"></i> Email: contacto@ofmedical.com</li>
-                <li>
-                    <a href="https://wa.me/573001234567?text=Hola,%20quisiera%20solicitar%20más%20información." target="_blank">
-                        <i class="fa-brands fa-whatsapp"></i> Enviar mensaje por WhatsApp
-                    </a>
-                </li>
-            </ul>
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-column about">
+                    <img src="./assets/images/logo.png" alt="Icono OFMEDICAL SAS" class="footer-logo">
+                    <p>Soluciones integrales para la salud, ofreciendo dispositivos médicos y productos naturales de la
+                        más alta calidad.</p>
+                </div>
+
+                <div class="footer-column contact">
+                    <h3>Información de Contacto</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <a href="https://wa.me/573176408253" target="_blank" aria-label="WhatsApp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span>+57 317 640 8253</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/ofmedicalsas?igsh=dDEwNTU2cmJ0aDBs" target="_blank"
+                                aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:ofmedicalsas@gmail.com" aria-label="Email">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>ofmedicalsas@gmail.com</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.google.com/maps/search/?api=1&query=calle+106+%2342-23+Floridablanca+Santander"
+                                target="_blank" aria-label="Location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Dirección</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 OFMEDICAL SAS. Todos los derechos reservados.</p>
@@ -88,4 +118,5 @@
     <script src="./js/cart.js"></script>
     <script src="./js/main.js"></script>
 </body>
+
 </html>
