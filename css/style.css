@@ -4,22 +4,18 @@
 /* ======================= VARIABLES Y ESTILOS GLOBALES ======================= */
 :root {
     --dark-blue: #041c38;
-    --dark-blue-light: #06254e; /* Tono más claro para el gradiente del Hero */
+    --dark-blue-light: #06254e;
     --golden-yellow: #efdaa0;
-    --bright-cyan: #0ab7dc;
     --slate-gray: #5a7385;
     --teal: #1b84a9;
     --white: #ffffff;
     --soft-white: #f0f2f5;
     --text-color: #333;
+    --vp-green: #61a756;
     --header-height: 80px;
     --radius: 15px;
     --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    --transition: all 0.4s ease-in-out;
-        --vp-dark: #13161f;
-    --vp-light: #e3e4e6;
-    --vp-green: #61a756;
-    --vp-blue: #176fad;
+    --transition: all 0.3s ease-in-out;
 }
 
 * {
@@ -33,6 +29,38 @@ body {
     background: var(--soft-white);
     color: var(--text-color);
     line-height: 1.7;
+}
+
+/* ======================= CLASES DE UTILIDAD ======================= */
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+}
+
+.section-title h2 {
+    font-size: clamp(2.2rem, 5vw, 2.8rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--dark-blue);
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    color: #555;
 }
 
 /* ======================= HEADER ======================= */
@@ -50,16 +78,10 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    padding: 0 1.5rem;
 }
 
 .logo img {
     height: 50px;
-    transition: transform 0.3s ease;
-}
-
-.logo img:hover {
-    transform: scale(1.05);
 }
 
 .navbar {
@@ -74,32 +96,14 @@ body {
     transition: color 0.3s;
 }
 
-.navbar a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--bright-cyan);
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-}
-
 .navbar a:hover {
-    color: var(--bright-cyan);
-}
-
-.navbar a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+    color: var(--golden-yellow);
 }
 
 .header-right {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
 
 .cart-icon {
@@ -123,6 +127,7 @@ body {
 }
 
 .menu-toggle {
+    display: block;
     background: none;
     border: none;
     color: var(--white);
@@ -138,8 +143,13 @@ body {
     top: var(--header-height);
     left: 0;
     width: 100%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid var(--teal);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    opacity: 0;
+    transform: translateY(-15px);
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s;
 }
 
 .mobile-menu a {
@@ -147,14 +157,22 @@ body {
     text-decoration: none;
     padding: 1.2rem 1.5rem;
     text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu a:last-child {
+    border-bottom: none;
 }
 
 .mobile-menu a:hover {
-    background-color: var(--teal);
+    background-color: var(--dark-blue-light);
 }
 
 body.mobile-menu-open .mobile-menu {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
 }
 
 /* ======================= SECCIÓN HERO ======================= */
@@ -174,7 +192,7 @@ body.mobile-menu-open .mobile-menu {
 }
 
 .hero-content h1 {
-    font-size: 3.2rem;
+    font-size: clamp(2.5rem, 6vw, 3.2rem);
     font-weight: 700;
     margin-bottom: 1rem;
 }
@@ -185,7 +203,6 @@ body.mobile-menu-open .mobile-menu {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    font-weight: 300;
     opacity: 0.9;
 }
 
@@ -213,95 +230,81 @@ body.mobile-menu-open .mobile-menu {
     box-shadow: 0 6px 20px rgba(239, 218, 160, 0.6);
 }
 
-.btn-secondary {
-    background-color: var(--white);
-    color: var(--dark-blue);
-}
-
-.btn-secondary:hover {
-    background-color: var(--soft-white);
-    transform: translateY(-2px);
-}
-
-/* ======================= SECCIONES DE CONTENIDO ======================= */
-.content-section {
-    padding: 5rem 1.5rem;
-    text-align: center;
-}
-
-.content-section .container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.section-title {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 4rem auto;
-}
-
-.section-title h2 {
-    font-size: 2.8rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--dark-blue);
-}
-
-.section-title p {
-    font-size: 1.1rem;
-    color: #555;
-}
-
 /* ======================= CTA CONTAINER ======================= */
 .cta-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    padding: 2rem 1.5rem 5rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Ajuste para mejor distribución */
+    gap: 2.5rem;
+    padding: 3rem 1.5rem 5rem; /* Más padding para destacar */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .cta-card {
-    background-color: var(--dark-blue);
-    border-top: 4px solid var(--golden-yellow);
+    background-color: var(--white); /* Fondo blanco para más contraste */
     border-radius: var(--radius);
     padding: 3rem;
     text-align: center;
-    color: var(--white);
-    flex: 1;
-    min-width: 320px;
-    max-width: 450px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    color: var(--dark-blue); /* Texto en azul oscuro */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Sombra sutil */
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 5px solid var(--golden-yellow); /* Línea superior dorada más visible */
 }
 
 .cta-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .cta-card h2 {
     font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
 .cta-card p {
+    font-size: 1.1rem;
     margin-bottom: 2rem;
-    font-weight: 300;
+    color: var(--text-color);
+    flex-grow: 1;
 }
 
 .cta-card .btn {
-    background-color: var(--white);
+    background-color: var(--golden-yellow); 
     color: var(--dark-blue);
-    box-shadow: 0 4px 12px rgba(239, 218, 160, 0.4);
+    box-shadow: 0 4px 12px rgba(239, 218, 160, 0.6);
 }
 
 .cta-card .btn:hover {
+    background-color: #d4b76d; 
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(239, 218, 160, 0.6);
+    box-shadow: 0 6px 15px rgba(239, 218, 160, 0.8);
+}
+
+/* Estilos específicos para la tarjeta de Verde Power */
+.cta-card.verdepower-cta {
+    border-top-color: var(--vp-green); 
+}
+
+.cta-card.verdepower-cta h2,
+.cta-card.verdepower-cta p {
+    color: var(--vp-green); 
+}
+
+.cta-card.verdepower-cta .btn {
+    background-color: var(--vp-green); 
+    color: var(--white);
+    border-color: var(--vp-green);
+    box-shadow: 0 4px 12px rgba(97, 167, 86, 0.6);
+}
+
+.cta-card.verdepower-cta .btn:hover {
+    background-color: #529148; 
+    box-shadow: 0 6px 15px rgba(97, 167, 86, 0.8);
 }
 
 /* ======================= FOOTER ======================= */
@@ -318,12 +321,6 @@ body.mobile-menu-open .mobile-menu {
     padding: 0 1.5rem;
 }
 
-.footer-content h3 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
 .contact-info {
     list-style: none;
     padding: 0;
@@ -332,24 +329,21 @@ body.mobile-menu-open .mobile-menu {
 
 .contact-info li {
     margin-bottom: 1rem;
-    font-weight: 300;
 }
 
 .contact-info a {
     color: var(--white);
     text-decoration: none;
     transition: color 0.3s;
-    font-weight: 400;
 }
 
 .contact-info a:hover {
-    color: var(--bright-cyan);
+    color: var(--golden-yellow);
 }
 
 .contact-info i {
     margin-right: 0.8rem;
-    color: var(--bright-cyan);
-    font-size: 1.2rem;
+    color: var(--golden-yellow);
 }
 
 .footer-bottom {
@@ -361,38 +355,42 @@ body.mobile-menu-open .mobile-menu {
 
 /* ======================= PÁGINA DE CATÁLOGO ======================= */
 .catalog-header {
-    padding: 5rem 1.5rem 2rem;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
 }
 
 .filter-container {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 4rem;
+    gap: 1.5rem; /* ✨ Corregido: Un poco más de espacio entre botones */
     flex-wrap: wrap;
+    margin-bottom: 4rem; /* ✨ Corregido: Espacio vertical para separar de los productos */
 }
 
 .filter-btn {
-    background-color: transparent;
-    border: 2px solid #ddd;
+    background-color: var(--white);
+    border: 1px solid #e0e0e0; /* ✨ Corregido: Borde más sutil */
     color: var(--slate-gray);
-    padding: 0.6rem 1.5rem;
+    padding: 0.8rem 2rem; /* ✨ Corregido: Botones más grandes */
     border-radius: 50px;
     cursor: pointer;
     font-weight: 600;
+    font-size: 0.95rem; /* ✨ Corregido: Texto ligeramente más grande */
     transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* ✨ Corregido: Sombra sutil por defecto */
 }
 
 .filter-btn:hover {
     background-color: var(--soft-white);
     border-color: var(--slate-gray);
+    transform: translateY(-2px);
 }
 
 .filter-btn.active {
     background-color: var(--white);
     color: var(--dark-blue);
-    border-color: transparent;
-    box-shadow: 0 4px 12px rgba(239, 218, 160, 0.4);
+    border-color: var(--golden-yellow);
+    box-shadow: 0 4px 12px rgba(239, 218, 160, 0.6);
 }
 
 .product-grid {
@@ -406,8 +404,8 @@ body.mobile-menu-open .mobile-menu {
 
 .product-card {
     background-color: var(--white);
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -421,7 +419,7 @@ body.mobile-menu-open .mobile-menu {
 
 .product-card .product-image img {
     width: 100%;
-    height: 220px;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -445,16 +443,49 @@ body.mobile-menu-open .mobile-menu {
     width: 100%;
 }
 
+/* ======================= ESTILOS VERDEPOWER ======================= */
+.filter-btn[data-category='verdepower'] {
+    border-color: var(--vp-green);
+    color: var(--vp-green);
+}
+
+.filter-btn[data-category='verdepower']:hover {
+    background-color: var(--vp-green);
+    color: var(--white);
+}
+
+.filter-btn[data-category='verdepower'].active {
+    background: var(--vp-green);
+    color: var(--white);
+    border-color: var(--vp-green);
+    box-shadow: 0 4px 15px rgba(97, 167, 86, 0.3);
+}
+
+.product-card[data-category='verdepower'] {
+    border-top: 4px solid var(--vp-green);
+}
+
+.btn-verdepower {
+    background: var(--vp-green);
+    color: var(--white);
+    border: none;
+    box-shadow: none;
+}
+
+.btn-verdepower:hover {
+    background: #529148;
+    transform: none;
+    box-shadow: none;
+}
 
 /* ======================= PÁGINA DEL CARRITO ======================= */
 .cart-page-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
-    padding: 0 1.5rem 5rem;
+    gap: 2.5rem;
+    align-items: flex-start;
     max-width: 1400px;
     margin: 0 auto;
-    align-items: flex-start;
 }
 
 .cart-items-list {
@@ -467,8 +498,8 @@ body.mobile-menu-open .mobile-menu {
     min-width: 300px;
     background-color: var(--white);
     padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
     position: sticky;
     top: calc(var(--header-height) + 2rem);
 }
@@ -484,7 +515,6 @@ body.mobile-menu-open .mobile-menu {
 
 .summary-row {
     display: flex;
-    text-align: center;
     justify-content: space-between;
     font-size: 1.1rem;
     margin-bottom: 2rem;
@@ -509,17 +539,18 @@ body.mobile-menu-open .mobile-menu {
     align-items: center;
     gap: 1.5rem;
     background-color: var(--white);
-    padding: 1rem;
-    border-radius: 10px;
+    padding: 1.5rem;
+    border-radius: var(--radius);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .cart-item-image img {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     object-fit: cover;
     border-radius: 8px;
+    border: 1px solid #f0f0f0;
 }
 
 .cart-item-info {
@@ -569,6 +600,7 @@ body.mobile-menu-open .mobile-menu {
     font-size: 1.2rem;
     cursor: pointer;
     transition: color 0.3s;
+    margin-left: 1rem;
 }
 
 .remove-btn:hover {
@@ -579,22 +611,19 @@ body.mobile-menu-open .mobile-menu {
     width: 100%;
     text-align: center;
     padding: 4rem 2rem;
-    background-color: var(--white);
-    border-radius: 15px;
 }
 
-/* ======================= ESTILOS PARA LA PÁGINA DE SERVICIOS ======================= */
+/* ======================= PÁGINA DE SERVICIOS ======================= */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 4rem;
 }
 
 .service-card {
     background-color: var(--white);
     border-radius: var(--radius);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow);
     padding: 2.5rem 2rem;
     text-align: center;
     display: flex;
@@ -611,14 +640,14 @@ body.mobile-menu-open .mobile-menu {
 
 .service-icon {
     font-size: 3rem;
-    color: var(--teal);
+    color: var(--dark-blue);
     margin-bottom: 1.5rem;
     transition: var(--transition);
 }
 
 .service-card:hover .service-icon {
     transform: scale(1.1) rotate(5deg);
-    color: var(--bright-cyan);
+    color: var(--golden-yellow);
 }
 
 .service-title {
@@ -638,28 +667,37 @@ body.mobile-menu-open .mobile-menu {
 
 .service-card .btn {
     width: 100%;
-    background: var(--bright-cyan);
-    color: var(--white);
-    border: none;
-    box-shadow: none;
-    padding: 0.8rem 2rem;
 }
 
-.service-card .btn:hover {
-    background: var(--teal);
-    transform: none;
-    box-shadow: none;
+/* ======================= PATRÓN DE FONDO ======================= */
+.combined-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
-.service-card .btn i {
-    margin-left: 0.5rem;
+.patron-borroso {
+    position: relative;
+    z-index: 1;
+    background-color: var(--soft-white);
 }
 
+.patron-borroso::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/backgrounds/background1.png');
+    background-repeat: repeat;
+    filter: blur(3px);
+    opacity: 0.5;
+    z-index: -1;
+}
 
-/* =================================================================== */
-/* MEDIA QUERIES PARA RESPONSIVIDAD */
-/* =================================================================== */
+/* ======================= MEDIA QUERIES ======================= */
 @media (min-width: 769px) {
+
     .menu-toggle,
     .mobile-menu {
         display: none;
@@ -678,14 +716,14 @@ body.mobile-menu-open .mobile-menu {
 
     .hero {
         min-height: auto;
+        padding: 4rem 1.5rem;
     }
 
     .hero-content h1 {
         font-size: 2.5rem;
     }
 
-    .section-title h2,
-    .content-section h2 {
+    .section-title h2 {
         font-size: 2.2rem;
     }
 
@@ -724,38 +762,4 @@ body.mobile-menu-open .mobile-menu {
     .remove-btn {
         grid-area: remove;
     }
-}
-
-/* ======== Estilo para el botón de filtro de Verdepower ========*/
-.filter-btn[data-category='verdepower'] {
-    border-color: var(--vp-green);
-    color: var(--vp-green);
-}
-.filter-btn[data-category='verdepower']:hover {
-    background-color: var(--vp-green);
-    color: var(--white);
-}
-.filter-btn[data-category='verdepower'].active {
-    background: var(--vp-green);
-    color: var(--white);
-    border-color: var(--vp-green);
-    box-shadow: 0 4px 15px rgba(97, 167, 86, 0.3);
-}
-
-/* 3. Estilo para las tarjetas de producto de Verdepower */
-.product-card[data-category='verdepower'] {
-    border-top: 4px solid var(--vp-green);
-}
-
-/* 4. Nuevo estilo de botón para las tarjetas Verdepower */
-.btn-verdepower {
-    background: var(--vp-green);
-    color: var(--white);
-    border: none;
-    box-shadow: none;
-}
-.btn-verdepower:hover {
-    background: #529148; /* Un verde ligeramente más oscuro */
-    transform: none;
-    box-shadow: none;
 }

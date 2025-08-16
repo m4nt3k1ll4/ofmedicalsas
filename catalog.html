@@ -41,21 +41,28 @@
     </div>
 </header>
 
-    <main>
-        <section class="catalog-header content-section">
-            <h2>Nuestro Catálogo de Productos</h2>
-            <p>Encuentra la solución perfecta para tus necesidades de salud y bienestar.</p>
+    <main class="patron-borroso">
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nuestro Catálogo de Productos</h2>
+                    <p>Encuentra la solución perfecta para tus necesidades de salud y bienestar.</p>
+                </div>
+
+                <div class="filter-container">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="dispositivos">Dispositivos Medicos</button>
+                    <button class="filter-btn" data-category="natural">Medicina Natural</button>
+                    <button class="filter-btn" data-category="verdepower">Verde Power</button>
+                </div>
+
+                <div id="product-grid" class="product-grid"></div>
+                
+                <div id="no-results-message" class="no-results-message" style="display: none;">
+                    <p>No se encontraron productos que coincidan con tu búsqueda.</p>
+                </div>
+            </div>
         </section>
-
-<div class="filter-container">
-    <button class="filter-btn active" data-category="all">Todos</button>
-    <button class="filter-btn" data-category="dispositivos">Dispositivos Medicos</button>
-    <button class="filter-btn" data-category="natural">Medicina Natural</button>
-    <button class="filter-btn" data-category="verdepower">Verde Power</button>
-</div>
-
-        <div id="product-grid" class="product-grid"></div>
-
     </main>
 
     <footer class="footer">

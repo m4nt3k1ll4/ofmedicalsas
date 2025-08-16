@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Cotización - OFMEDICAL SAS</title>
+    <title>Carrito - OFMEDICAL SAS</title>
     <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -41,39 +41,60 @@
     </div>
 </header>
 
-    <main>
-        <section class="content-section">
-            <h2>Resumen de tu Cotización</h2>
-            <p>Verifica los productos, ajusta las cantidades y solicita tu asesoría con un clic.</p>
-        </section>
-
-        <div class="cart-page-container">
-            <div id="cart-items-container" class="cart-items-list">
-                </div>
-
-            <div id="cart-summary-container" class="cart-summary">
-                <h3>Resumen</h3>
-                <div class="summary-row">
-                    <span>Total de Productos:</span>
-                    <span id="total-items">0</span>
-                </div>
-                <button id="checkout-btn" class="btn btn-primary btn-full-width">
-                    <i class="fa-brands fa-whatsapp"></i> Solicitar Asesoría por WhatsApp
-                </button>
+<main>
+    <section class="section patron-borroso">
+        <div class="container">
+            <div class="section-title">
+                <h2>Resumen de tu Cotización</h2>
+                <p>Verifica los productos, ajusta las cantidades y solicita tu asesoría con un clic.</p>
             </div>
-            
-            <div id="empty-cart-message" class="empty-cart-message" style="display: none;">
-                <h3>Tu carrito está vacío</h3>
-                <p>Añade productos desde nuestro catálogo para solicitar una cotización.</p>
-                <a href="./catalog.html" class="btn btn-primary">Ir al Catálogo</a>
+
+            <div class="cart-page-container">
+                <div id="cart-items-container" class="cart-items-list">
+                    </div>
+
+                <div id="cart-summary-container" class="cart-summary">
+                    <h3>Resumen</h3>
+                    <div class="summary-row">
+                        <span>Total de Productos:</span>
+                        <span id="total-items">0</span>
+                    </div>
+                    <button id="checkout-btn" class="btn btn-primary btn-full-width">
+                        <i class="fa-brands fa-whatsapp"></i> Solicitar Asesoría por WhatsApp
+                    </button>
+                </div>
+                
+                <div id="empty-cart-message" class="empty-cart-message" style="display: none;">
+                    <h3>Tu carrito está vacío</h3>
+                    <p>Añade productos desde nuestro catálogo para solicitar una cotización.</p>
+                    <a href="./catalog.html" class="btn btn-primary">Ir al Catálogo</a>
+                </div>
             </div>
         </div>
-    </main>
+    </section>
+</main>
 
-    <footer class="footer">
-        </footer>
-    <script src="js/main.js"></script>
-    <script src="./js/products.js"></script> 
-    <script src="./js/cart.js"></script>
+<footer class="footer">
+    <div class="footer-content">
+        <h3>Contáctanos</h3>
+        <p>Estamos aquí para asesorarte. ¡Hablemos!</p>
+        <ul class="contact-info">
+            <li><i class="fa-solid fa-phone"></i> Teléfono: +57 300 123 4567</li>
+            <li><i class="fa-solid fa-envelope"></i> Email: contacto@ofmedical.com</li>
+            <li>
+                <a href="https://wa.me/573001234567?text=Hola,%20quisiera%20solicitar%20más%20información." target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> Enviar mensaje por WhatsApp
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 OFMEDICAL SAS. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="./js/products.js"></script>
+<script src="./js/cart.js"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>
