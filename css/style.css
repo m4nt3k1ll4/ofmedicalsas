@@ -764,7 +764,69 @@ body.mobile-menu-open .mobile-menu {
 .service-card .btn {
     width: 100%;
 }
+/* =================================================================== */
+/* ESTILOS PARA EL MARQUEE DE SERVICIOS */
+/* =================================================================== */
 
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.marquee-track {
+    display: flex;
+    /* Ancho total es el número de items x su ancho. Ajustar si es necesario. */
+    width: calc(350px * 14); 
+    animation: scroll 40s linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused; /* Pausa la animación al pasar el mouse */
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    width: 350px; /* Ancho fijo para cada item */
+    padding: 1.5rem 2rem;
+    margin: 0 1rem;
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    color: var(--dark-blue);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: var(--transition);
+    border: 1px solid #f0f0f0;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: var(--golden-yellow);
+    color: var(--dark-blue);
+}
+
+.service-item i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: var(--teal);
+}
+
+/* Animación de desplazamiento */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        /* Se desplaza la mitad del ancho total, que es el tamaño de la lista original */
+        transform: translateX(calc(-350px * 7));
+    }
+}
 /* ======================= PATRÓN DE FONDO ======================= */
 .combined-section {
     padding-top: 5rem;
