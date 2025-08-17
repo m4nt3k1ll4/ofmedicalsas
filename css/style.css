@@ -82,6 +82,8 @@ body {
 
 .logo img {
     height: 50px;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0));
 }
 
 .navbar {
@@ -233,7 +235,7 @@ body.mobile-menu-open .mobile-menu {
 /* ======================= CTA CONTAINER ======================= */
 .cta-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
     padding: 3rem 1.5rem 5rem;
     max-width: 1200px;
@@ -285,26 +287,26 @@ body.mobile-menu-open .mobile-menu {
     box-shadow: 0 6px 15px rgba(239, 218, 160, 0.8);
 }
 
-/*==============================verdepower======================*/
-.cta-card.verdepower-cta {
-    border-top-color: var(--vp-green);
+/*------------------C2A SERVICES--------------------*/
+.cta-card.services-cta {
+    border-top-color: var(--teal);
 }
 
-.cta-card.verdepower-cta h2,
-.cta-card.verdepower-cta p {
-    color: var(--vp-green);
+.cta-card.services-cta h2,
+.cta-card.services-cta p {
+    color: var(--teal);
 }
 
-.cta-card.verdepower-cta .btn {
-    background-color: var(--vp-green);
+.cta-card.services-cta .btn {
+    background-color: var(--teal);
     color: var(--white);
-    border-color: var(--vp-green);
-    box-shadow: 0 4px 12px rgba(97, 167, 86, 0.6);
+    border-color: var(--teal);
+    box-shadow: 0 4px 12px rgba(26, 155, 153, 0.6);
 }
 
-.cta-card.verdepower-cta .btn:hover {
-    background-color: #529148;
-    box-shadow: 0 6px 15px rgba(97, 167, 86, 0.8);
+.cta-card.services-cta .btn:hover {
+    background-color: var(--teal);
+    box-shadow: 0 6px 15px rgba(26, 155, 153, 0.8);
 }
 
 .footer {
@@ -412,7 +414,7 @@ body.mobile-menu-open .mobile-menu {
         margin-left: auto;
         margin-right: auto;
     }
-
+    
     .footer-logo {
         margin-left: auto;
         margin-right: auto;
@@ -422,6 +424,63 @@ body.mobile-menu-open .mobile-menu {
         justify-content: center;
         text-align: left;
     }
+}
+
+/*==============================verdepower======================*/
+.cta-card.verdepower-cta {
+    border-top-color: var(--vp-green);
+}
+
+.cta-card.verdepower-cta h2,
+.cta-card.verdepower-cta p {
+    color: var(--vp-green);
+}
+
+.cta-card.verdepower-cta .btn {
+    background-color: var(--vp-green);
+    color: var(--white);
+    border-color: var(--vp-green);
+    box-shadow: 0 4px 12px rgba(97, 167, 86, 0.6);
+}
+
+.cta-card.verdepower-cta .btn:hover {
+    background-color: #529148;
+    box-shadow: 0 6px 15px rgba(97, 167, 86, 0.8);
+}
+    
+/* ======================= ESTILOS VERDEPOWER CATALOGO ======================= */
+.filter-btn[data-category='verdepower'] {
+    border-color: var(--vp-green);
+    color: var(--vp-green);
+}
+
+.filter-btn[data-category='verdepower']:hover {
+    background-color: var(--vp-green);
+    color: var(--white);
+}
+
+.filter-btn[data-category='verdepower'].active {
+    background: var(--vp-green);
+    color: var(--white);
+    border-color: var(--vp-green);
+    box-shadow: 0 4px 15px rgba(97, 167, 86, 0.3);
+}
+
+.product-card[data-category='verdepower'] {
+    border-top: 4px solid var(--vp-green);
+}
+
+.btn-verdepower {
+    background: var(--vp-green);
+    color: var(--white);
+    border: none;
+    box-shadow: none;
+}
+
+.btn-verdepower:hover {
+    background: #529148;
+    transform: none;
+    box-shadow: none;
 }
 
 /* ======================= PÁGINA DE CATÁLOGO ======================= */
@@ -514,40 +573,6 @@ body.mobile-menu-open .mobile-menu {
     width: 100%;
 }
 
-/* ======================= ESTILOS VERDEPOWER ======================= */
-.filter-btn[data-category='verdepower'] {
-    border-color: var(--vp-green);
-    color: var(--vp-green);
-}
-
-.filter-btn[data-category='verdepower']:hover {
-    background-color: var(--vp-green);
-    color: var(--white);
-}
-
-.filter-btn[data-category='verdepower'].active {
-    background: var(--vp-green);
-    color: var(--white);
-    border-color: var(--vp-green);
-    box-shadow: 0 4px 15px rgba(97, 167, 86, 0.3);
-}
-
-.product-card[data-category='verdepower'] {
-    border-top: 4px solid var(--vp-green);
-}
-
-.btn-verdepower {
-    background: var(--vp-green);
-    color: var(--white);
-    border: none;
-    box-shadow: none;
-}
-
-.btn-verdepower:hover {
-    background: #529148;
-    transform: none;
-    box-shadow: none;
-}
 
 /* ======================= PÁGINA DEL CARRITO ======================= */
 .cart-page-container {
@@ -856,121 +881,122 @@ body.mobile-menu-open .mobile-menu {
         background-size: 250px;
     }
 
-/* ======================= AJUSTES DEL FOOTER PARA MÓVILES ======================= */
-@media (max-width: 768px) {
-    .footer {
-        padding-top: 3rem;
-    }
+    /* ======================= AJUSTES DEL FOOTER PARA MÓVILES ======================= */
+    @media (max-width: 768px) {
+        .footer {
+            padding-top: 3rem;
+        }
 
-    .footer-main {
-        /* Apila y centra los bloques (logo y lista de íconos) */
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        padding-bottom: 2rem;
-    }
+        .footer-main {
+            /* Apila y centra los bloques (logo y lista de íconos) */
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            padding-bottom: 2rem;
+        }
 
-    /* Oculta los elementos de texto que no se necesitan en móvil */
-    .footer-column.about p,
-    .footer-column.contact h3,
-    .contact-list span { /* Oculta el texto dentro de los enlaces */
-        display: none;
-    }
-
-    .footer-logo {
-        height: 50px;
-        margin: 0;
-    }
-
-    .contact-list {
-        /* Convierte la lista en una fila de íconos */
-        display: flex;
-        justify-content: center; /* Centra los íconos como grupo */
-        align-items: center;
-        gap: 2rem; /* Espacio entre cada ícono */
-        list-style: none;
-        padding: 0;
-    }
-    
-    .contact-list li {
-        margin: 0;
-    }
-
-    .contact-list a {
-        color: var(--white);
-        font-size: 1.8rem; /* Tamaño de los íconos */
-        transition: var(--transition);
-    }
-    
-    .contact-list a:hover {
-        color: var(--golden-yellow);
-        transform: scale(1.1);
-    }
-}
-
-        /* --- Fin de los elementos ocultos --- */
-
-        .footer-column {
-            /* Resetea la base del flex para que los elementos se ajusten a su contenido */
-            flex-basis: auto;
+        /* Oculta los elementos de texto que no se necesitan en móvil */
+        .footer-column.about p,
+        .footer-column.contact h3,
+        .contact-list span {
+            /* Oculta el texto dentro de los enlaces */
+            display: none;
         }
 
         .footer-logo {
-            height: 45px;
-            /* Un tamaño más adecuado para la fila de íconos */
+            height: 50px;
             margin: 0;
         }
 
         .contact-list {
-            /* Convierte la lista de contactos en una fila de íconos */
+
             display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 1.5rem;
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
         }
 
         .contact-list li {
-            margin-bottom: 0;
-            /* Elimina el margen vertical */
-        }
-
-        .contact-list a i {
-            font-size: 1.6rem;
-            /* Asegura que los íconos tengan buen tamaño */
             margin: 0;
         }
 
-        .social-links {
-            margin: 0;
-            font-size: 1.6rem;
+        .contact-list a {
+            color: var(--white);
+            font-size: 1.8rem;
+            /* Tamaño de los íconos */
+            transition: var(--transition);
+        }
+
+        .contact-list a:hover {
+            color: var(--golden-yellow);
+            transform: scale(1.1);
         }
     }
 
-    /* Ajustes Adicionales para Móviles Pequeños (menos de 420px) */
-    @media (max-width: 420px) {
+    /* --- Fin de los elementos ocultos --- */
 
-        .container,
-        .hero,
-        .footer-content {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
+    .footer-column {
+        /* Resetea la base del flex para que los elementos se ajusten a su contenido */
+        flex-basis: auto;
+    }
 
-        .services-grid,
-        .product-grid {
-            grid-template-columns: 1fr;
-        }
+    .footer-logo {
+        height: 45px;
+        /* Un tamaño más adecuado para la fila de íconos */
+        margin: 0;
+    }
 
-        .hero-content h1 {
-            font-size: 2.2rem;
-        }
+    .contact-list {
+        /* Convierte la lista de contactos en una fila de íconos */
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
 
-        .section-title h2 {
-            font-size: 2rem;
-        }
+    .contact-list li {
+        margin-bottom: 0;
+        /* Elimina el margen vertical */
+    }
 
-        .btn {
-            padding: 0.8rem 1.8rem;
-            font-size: 0.9rem;
-        }
+    .contact-list a i {
+        font-size: 1.6rem;
+        /* Asegura que los íconos tengan buen tamaño */
+        margin: 0;
+    }
+
+    .social-links {
+        margin: 0;
+        font-size: 1.6rem;
+    }
+}
+
+/* Ajustes Adicionales para Móviles Pequeños (menos de 420px) */
+@media (max-width: 420px) {
+
+    .container,
+    .hero,
+    .footer-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .services-grid,
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.9rem;
     }
 }
