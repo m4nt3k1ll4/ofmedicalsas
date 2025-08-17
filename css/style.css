@@ -709,122 +709,120 @@ body.mobile-menu-open .mobile-menu {
     padding: 4rem 2rem;
 }
 
-/* ======================= PÁGINA DE SERVICIOS ======================= */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.service-card {
-    background-color: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 2.5rem 2rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #f0f0f0;
-    transition: var(--transition);
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.service-icon {
-    font-size: 3rem;
-    color: var(--dark-blue);
-    margin-bottom: 1.5rem;
-    transition: var(--transition);
-}
-
-.service-card:hover .service-icon {
-    transform: scale(1.1) rotate(5deg);
-    color: var(--golden-yellow);
-}
-
-.service-title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--dark-blue);
-    margin-bottom: 1rem;
-}
-
-.service-description {
-    font-size: 1rem;
-    color: #555;
-    flex-grow: 1;
-    margin-bottom: 2rem;
-    max-width: 90%;
-}
-
-.service-card .btn {
-    width: 100%;
-}
 /* =================================================================== */
-/* ESTILOS PARA EL MARQUEE DE SERVICIOS */
+/* ESTILOS PARA LA PÁGINA DE SERVICIOS (VERSIÓN DEPURADA) */
 /* =================================================================== */
 
 .marquee-container {
-    width: 100%;
-    overflow: hidden;
+    width: 100vw; /* Ocupa el 100% del ancho de la ventana */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); /* Truco para centrarlo y que ocupe todo el ancho */
     padding: 2rem 0;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 .marquee-track {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    /* Ancho total es el número de items x su ancho. Ajustar si es necesario. */
-    width: calc(350px * 14); 
-    animation: scroll 40s linear infinite;
-}
-
-.marquee-container:hover .marquee-track {
-    animation-play-state: paused; /* Pausa la animación al pasar el mouse */
 }
 
 .service-item {
     display: flex;
-    align-items: center;
-    width: 350px; /* Ancho fijo para cada item */
-    padding: 1.5rem 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 320px;
+    height: 250px;
+    padding: 2rem;
     margin: 0 1rem;
     background-color: var(--white);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    color: var(--dark-blue);
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
     transition: var(--transition);
     border: 1px solid #f0f0f0;
-}
-
-.service-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    background-color: var(--golden-yellow);
-    color: var(--dark-blue);
+    text-align: center;
 }
 
 .service-item i {
-    font-size: 1.5rem;
-    margin-right: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     color: var(--teal);
+    transition: var(--transition);
 }
 
-/* Animación de desplazamiento */
-@keyframes scroll {
-    from {
-        transform: translateX(0);
+.service-item-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.service-item .btn {
+    width: 100%;
+}
+
+.cta-button-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* --- ESTILOS PARA ESCRITORIO (Animación) --- */
+@media (min-width: 769px) {
+    .marquee-container {
+        overflow: hidden;
     }
-    to {
-        /* Se desplaza la mitad del ancho total, que es el tamaño de la lista original */
-        transform: translateX(calc(-350px * 7));
+
+    .marquee-track {
+        /* Se calcula el ancho total: (ancho de tarjeta + margen) * número de tarjetas */
+        width: calc(352px * 14);
+        animation: scroll 40s linear infinite;
+    }
+
+    .marquee-container:hover .marquee-track {
+        animation-play-state: paused;
+    }
+
+    .service-item:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-item:hover i {
+        color: var(--golden-yellow);
+        transform: translateY(-5px);
+    }
+
+    @keyframes scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(calc(-352px * 7)); }
+    }
+}
+
+/* --- ESTILOS PARA MÓVILES (Scroll Táctil) --- */
+@media (max-width: 768px) {
+    .marquee-container {
+        width: 100%; /* En móvil no necesita el truco de ancho completo */
+        position: static;
+        transform: none;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+        scrollbar-width: none;
+    }
+    .marquee-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .marquee-track {
+        padding: 0 1rem;
+    }
+
+    .service-item {
+        width: 75vw;
+        max-width: 300px;
     }
 }
 /* ======================= PATRÓN DE FONDO ======================= */
