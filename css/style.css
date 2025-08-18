@@ -414,7 +414,7 @@ body.mobile-menu-open .mobile-menu {
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     .footer-logo {
         margin-left: auto;
         margin-right: auto;
@@ -447,7 +447,7 @@ body.mobile-menu-open .mobile-menu {
     background-color: #529148;
     box-shadow: 0 6px 15px rgba(97, 167, 86, 0.8);
 }
-    
+
 /* ======================= ESTILOS VERDEPOWER CATALOGO ======================= */
 .filter-btn[data-category='verdepower'] {
     border-color: var(--vp-green);
@@ -710,14 +710,10 @@ body.mobile-menu-open .mobile-menu {
 }
 
 /* =================================================================== */
-/* ESTILOS PARA LA PÁGINA DE SERVICIOS (VERSIÓN DEPURADA) */
+/* ESTILOS PARA LA PÁGINA DE SERVICIOS (VERSIÓN FINAL) */
 /* =================================================================== */
 
 .marquee-container {
-    width: 100vw; /* Ocupa el 100% del ancho de la ventana */
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%); /* Truco para centrarlo y que ocupe todo el ancho */
     padding: 2rem 0;
 }
 
@@ -745,11 +741,25 @@ body.mobile-menu-open .mobile-menu {
     text-align: center;
 }
 
+/* ✨ CORRECCIÓN: Se combinan :hover y :active para que funcione en móvil */
+.service-item:hover,
+.service-item:active {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 .service-item i {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--teal);
     transition: var(--transition);
+}
+
+/* ✨ CORRECCIÓN: Se combinan :hover y :active para el ícono */
+.service-item:hover i,
+.service-item:active i {
+    color: var(--golden-yellow);
+    transform: translateY(-5px);
 }
 
 .service-item-title {
@@ -769,14 +779,17 @@ body.mobile-menu-open .mobile-menu {
     margin-top: 3rem;
 }
 
-/* --- ESTILOS PARA ESCRITORIO (Animación) --- */
+/* --- ESTILOS PARA ESCRITORIO Y TABLET (Más de 768px) --- */
 @media (min-width: 769px) {
     .marquee-container {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
         overflow: hidden;
     }
 
     .marquee-track {
-        /* Se calcula el ancho total: (ancho de tarjeta + margen) * número de tarjetas */
         width: calc(352px * 14);
         animation: scroll 40s linear infinite;
     }
@@ -785,46 +798,41 @@ body.mobile-menu-open .mobile-menu {
         animation-play-state: paused;
     }
 
-    .service-item:hover {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-    
-    .service-item:hover i {
-        color: var(--golden-yellow);
-        transform: translateY(-5px);
-    }
-
     @keyframes scroll {
         from { transform: translateX(0); }
         to { transform: translateX(calc(-352px * 7)); }
     }
 }
 
-/* --- ESTILOS PARA MÓVILES (Scroll Táctil) --- */
+/* --- ESTILOS PARA MÓVILES (Menos de 768px) --- */
 @media (max-width: 768px) {
     .marquee-container {
-        width: 100%; /* En móvil no necesita el truco de ancho completo */
-        position: static;
-        transform: none;
+        width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         touch-action: pan-x;
         scrollbar-width: none;
     }
+
     .marquee-container::-webkit-scrollbar {
         display: none;
     }
 
     .marquee-track {
-        padding: 0 1rem;
+        width: max-content;
+        /* ✨ CORRECCIÓN: Se ajusta el padding para evitar el scroll a la izquierda */
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 
     .service-item {
         width: 75vw;
         max-width: 300px;
+        height: auto;
+        padding: 1.5rem;
     }
 }
+
 /* ======================= PATRÓN DE FONDO ======================= */
 .combined-section {
     padding-top: 5rem;
