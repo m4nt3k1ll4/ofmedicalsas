@@ -3,10 +3,12 @@
 
 /* ======================= VARIABLES Y ESTILOS GLOBALES ======================= */
 :root {
+    --golden-tone-yellow: #E2C040;
     --dark-blue: #041c38;
     --dark-blue-light: #06254e;
     --golden-yellow: #efdaa0;
     --slate-gray: #5a7385;
+    --soft-blue: #ceeaff;
     --teal: #1b84a9;
     --white: #ffffff;
     --soft-white: #f0f2f5;
@@ -222,7 +224,8 @@ body.mobile-menu-open .mobile-menu {
 }
 
 .btn-primary {
-    background-color: var(--white);
+    border-color: var(--golden-tone-yellow);
+    background-color: var(--golden-tone-yellow);
     color: var(--dark-blue);
     box-shadow: 0 4px 12px rgba(239, 218, 160, 0.4);
 }
@@ -254,12 +257,13 @@ body.mobile-menu-open .mobile-menu {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: 5px solid var(--golden-yellow);
+    border-top: 5px solid var(--dark-blue-light);
+    box-shadow: 0 24px 60px rgba(4, 41, 120, 0.12);
 }
 
 .cta-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 30px rgba(4, 41, 120, 0.12);
 }
 
 .cta-card h2 {
@@ -276,38 +280,43 @@ body.mobile-menu-open .mobile-menu {
 }
 
 .cta-card .btn {
+    border-color: var(--golden-yellow);
     background-color: var(--golden-yellow);
     color: var(--dark-blue);
-    box-shadow: 0 4px 12px rgba(239, 218, 160, 0.6);
+    box-shadow: 0 4px 12px rgba(239, 218, 160, 0.4);
 }
 
 .cta-card .btn:hover {
-    background-color: #d4b76d;
+    background-color: var(--golden-tone-yellow);
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(239, 218, 160, 0.8);
 }
 
 /*------------------C2A SERVICES--------------------*/
 .cta-card.services-cta {
-    border-top-color: var(--teal);
+    border-top-color: var(--golden-tone-yellow);
 }
 
-.cta-card.services-cta h2,
+.cta-card.services-cta h2{
+    color: var(--dark-blue);
+}
 .cta-card.services-cta p {
-    color: var(--teal);
+    color: var(--text-color);
 }
 
 .cta-card.services-cta .btn {
-    background-color: var(--teal);
-    color: var(--white);
-    border-color: var(--teal);
-    box-shadow: 0 4px 12px rgba(26, 155, 153, 0.6);
+    background-color: var(--golden-yellow);
+    color: var(--dark-blue);
+    border-color: var(--golden-yellow);
+    box-shadow: 0 4px 12px rgba(239, 218, 160, 0.4);
 }
 
 .cta-card.services-cta .btn:hover {
-    background-color: var(--teal);
-    box-shadow: 0 6px 15px rgba(26, 155, 153, 0.8);
+    background-color: var(--golden-tone-yellow);
+    box-shadow: 0 6px 15px rgba(239, 218, 160, 0.8);
 }
+
+/*======================footer=======================*/
 
 .footer {
     background: var(--dark-blue);
@@ -426,27 +435,6 @@ body.mobile-menu-open .mobile-menu {
     }
 }
 
-/*==============================verdepower======================*/
-.cta-card.verdepower-cta {
-    border-top-color: var(--vp-green);
-}
-
-.cta-card.verdepower-cta h2,
-.cta-card.verdepower-cta p {
-    color: var(--vp-green);
-}
-
-.cta-card.verdepower-cta .btn {
-    background-color: var(--vp-green);
-    color: var(--white);
-    border-color: var(--vp-green);
-    box-shadow: 0 4px 12px rgba(97, 167, 86, 0.6);
-}
-
-.cta-card.verdepower-cta .btn:hover {
-    background-color: #529148;
-    box-shadow: 0 6px 15px rgba(97, 167, 86, 0.8);
-}
 
 /* ======================= ESTILOS VERDEPOWER CATALOGO ======================= */
 .filter-btn[data-category='verdepower'] {
@@ -834,18 +822,19 @@ body.mobile-menu-open .mobile-menu {
 }
 
 /* ======================= PATRÓN DE FONDO ======================= */
-.combined-section {
+/* .combined-section {
     padding-top: 5rem;
     padding-bottom: 5rem;
-}
+} */
+
 
 .patron-borroso {
     position: relative;
     z-index: 1;
-    background-color: var(--soft-white);
+    background-color: var(--soft-blue);
 }
 
-.patron-borroso::before {
+/* .patron-borroso::before {
     content: '';
     position: absolute;
     top: 0;
@@ -857,7 +846,7 @@ body.mobile-menu-open .mobile-menu {
     filter: blur(3px);
     opacity: 0.5;
     z-index: -1;
-}
+} */
 
 
 /* =================================================================== */
