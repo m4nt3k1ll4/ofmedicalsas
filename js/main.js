@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- LÓGICA PARA EL MENÚ MÓVIL ---
-    // Se ejecuta de forma segura en todas las páginas.
+    /*
+    * CONTROLADOR DEL MENÚ DE NAVEGACIÓN MÓVIL
+    * Se encarga de mostrar y ocultar el menú en dispositivos móviles
+    * al hacer clic en el botón de hamburguesa.
+    */
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -11,37 +14,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- LÓGICA PARA LA PÁGINA DE CATÁLOGO ---
+    /*
+    * CONTROLADOR DE LA PÁGINA DE CATÁLOGO
+    * Gestiona la renderización, el filtrado de productos por categoría y la activación
+    * de filtros a través de parámetros en la URL.
+    */
     const productGrid = document.getElementById('product-grid');
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const noResultsMessage = document.getElementById('no-results-message'); // Se añade el selector del mensaje
+    const noResultsMessage = document.getElementById('no-results-message');
 
-    // Esta verificación asegura que el siguiente código solo se ejecute en la página del catálogo.
     if (productGrid && filterBtns.length > 0) {
 
-        // --- FUNCIÓN PARA RENDERIZAR LOS PRODUCTOS ---
         const renderProducts = (category = 'all') => {
-            productGrid.innerHTML = ''; // Limpia el grid
+            productGrid.innerHTML = '';
 
             const filteredProducts = productos.filter(product => {
-                if (category === 'all') {
-                    return true;
-                }
+                if (category === 'all') return true;
                 return product.category === category;
             });
 
-            // ✨ MEJORA AÑADIDA: Lógica para mostrar mensaje si no hay productos
             if (filteredProducts.length === 0) {
                 if (noResultsMessage) noResultsMessage.style.display = 'block';
             } else {
                 if (noResultsMessage) noResultsMessage.style.display = 'none';
 
-                // Renderiza cada producto si la lista no está vacía
                 filteredProducts.forEach(product => {
                     const productCard = document.createElement('div');
                     productCard.className = 'product-card';
                     productCard.dataset.category = product.category;
-                    const buttonClass = product.category === 'verdepower' ? 'btn-primary' : 'btn-primary';
+                    const buttonClass = product.category === 'verdepower' ? 'btn-verdepower' : 'btn-primary';
 
                     productCard.innerHTML = `
                         <div class="product-image">
@@ -59,20 +60,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // --- LÓGICA DE LOS FILTROS ---
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 if (document.querySelector('.filter-btn.active')) {
                     document.querySelector('.filter-btn.active').classList.remove('active');
                 }
                 btn.classList.add('active');
-
                 const category = btn.getAttribute('data-category');
                 renderProducts(category);
             });
         });
 
-        // --- RENDERIZADO INICIAL ---
-        renderProducts();
+        // Lógica para leer el parámetro de la URL y activar un filtro
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoryFromURL = urlParams.get('category');
+
+        if (categoryFromURL) {
+            const filterToActivate = document.querySelector(`.filter-btn[data-category="${categoryFromURL}"]`);
+            if (filterToActivate) {
+                filterToActivate.click(); // Simula un clic para activar el filtro
+            } else {
+                renderProducts(); // Si la categoría no existe, muestra todos
+            }
+        } else {
+            renderProducts(); // Renderizado inicial si no hay parámetro en la URL
+        }
     }
 });

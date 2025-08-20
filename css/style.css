@@ -739,14 +739,14 @@ body.mobile-menu-open .mobile-menu {
 .service-item i {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--teal);
+    color: var(--dark-blue);
     transition: var(--transition);
 }
 
 /* ✨ CORRECCIÓN: Se combinan :hover y :active para el ícono */
 .service-item:hover i,
 .service-item:active i {
-    color: var(--golden-yellow);
+    color: var(--golden-tone-yellow);
     transform: translateY(-5px);
 }
 
