@@ -8,7 +8,7 @@
     --dark-blue-light: #06254e;
     --golden-yellow: #efdaa0;
     --slate-gray: #5a7385;
-    --soft-blue: #ceeaff;
+    --soft-blue: #ceeaff89;
     --teal: #1b84a9;
     --white: #ffffff;
     --soft-white: #f0f2f5;
@@ -305,15 +305,15 @@ body.mobile-menu-open .mobile-menu {
 }
 
 .cta-card.services-cta .btn {
-    background-color: var(--golden-yellow);
-    color: var(--dark-blue);
+    background-color: var(--dark-blue-light);
+    color: var(--soft-white);
     border-color: var(--golden-yellow);
-    box-shadow: 0 4px 12px rgba(239, 218, 160, 0.4);
+    box-shadow: 0 4px 12px rgba(30, 24, 207, 0.4);
 }
 
 .cta-card.services-cta .btn:hover {
-    background-color: var(--golden-tone-yellow);
-    box-shadow: 0 6px 15px rgba(239, 218, 160, 0.8);
+    background-color: var(--dark-blue);
+    box-shadow: 0 6px 15px rgba(39, 47, 196, 0.8);
 }
 
 /*======================footer=======================*/
@@ -405,11 +405,11 @@ body.mobile-menu-open .mobile-menu {
 }
 
 .footer-bottom {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--dark-blue);
     padding: 1.5rem;
     text-align: center;
     font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(6, 3, 40, 0.1);
 }
 
 /* Ajuste para móvil en el footer */
@@ -437,7 +437,7 @@ body.mobile-menu-open .mobile-menu {
 
 
 /* ======================= ESTILOS VERDEPOWER CATALOGO ======================= */
-.filter-btn[data-category='verdepower'] {
+/* .filter-btn[data-category='verdepower'] {
     border-color: var(--vp-green);
     color: var(--vp-green);
 }
@@ -469,7 +469,7 @@ body.mobile-menu-open .mobile-menu {
     background: #529148;
     transform: none;
     box-shadow: none;
-}
+} */
 
 /* ======================= PÁGINA DE CATÁLOGO ======================= */
 .catalog-header {
@@ -486,9 +486,9 @@ body.mobile-menu-open .mobile-menu {
 }
 
 .filter-btn {
-    background-color: var(--white);
-    border: 1px solid #e0e0e0;
-    color: var(--slate-gray);
+    background-color: var(--golden-yellow);
+    border: 1px var(--golden-yellow);
+    color: var(--dark-blue);
     padding: 0.8rem 2rem;
     border-radius: 50px;
     cursor: pointer;
@@ -499,13 +499,13 @@ body.mobile-menu-open .mobile-menu {
 }
 
 .filter-btn:hover {
-    background-color: var(--soft-white);
-    border-color: var(--slate-gray);
+    background-color: var(--golden-tone-yellow);
+    border-color: var(--golden-tone-yellow);
     transform: translateY(-2px);
 }
 
 .filter-btn.active {
-    background-color: var(--white);
+    background-color: var(--golden-tone-yellow);
     color: var(--dark-blue);
     border-color: var(--golden-yellow);
     box-shadow: 0 4px 12px rgba(239, 218, 160, 0.6);
