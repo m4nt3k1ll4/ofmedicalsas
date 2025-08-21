@@ -560,6 +560,42 @@ body.mobile-menu-open .mobile-menu {
 .product-card .btn-primary {
     width: 100%;
 }
+@media (max-width: 768px) {
+    /* ... (aquí van el resto de tus reglas para móvil como .header, .hero, etc.) ... */
+
+    /* ============================================================= */
+    /* ✨ NUEVOS ESTILOS PARA EL CATÁLOGO ESTILO MERCADOLIBRE ✨ */
+    /* ============================================================= */
+
+    /* 1. Configura la cuadrícula de 2 columnas */
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        padding: 0 1rem 4rem; /* Menos padding lateral y vertical */
+    }
+
+    /* 2. Ajusta la altura de la imagen en la tarjeta */
+    .product-card .product-image {
+        height: 180%; /* Reduce la altura para que la tarjeta sea más compacta */
+    }
+
+    /* 3. Ajusta el contenido interno de las tarjetas */
+    .product-card .product-info {
+        padding: 1rem; /* Menos espaciado interno */
+    }
+
+    .product-card .product-name {
+        font-size: 0.9rem; /* Texto del título más pequeño */
+        margin-bottom: 1rem;
+        line-height: 1.4;
+    }
+
+    /* 4. Ajusta el botón para que quepa bien */
+    .product-card .btn-primary {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+}
 
 
 /* ======================= PÁGINA DEL CARRITO ======================= */
