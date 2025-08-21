@@ -280,16 +280,16 @@ body.mobile-menu-open .mobile-menu {
 }
 
 .cta-card .btn {
-    border-color: var(--golden-yellow);
-    background-color: var(--golden-yellow);
+    border-color: var(--golden-tone-yellow);
+    background-color: var(--golden-tone-yellow);
     color: var(--dark-blue);
-    box-shadow: 0 4px 12px rgba(239, 218, 160, 0.4);
+    box-shadow: 0 4px 12px rgba(239, 218, 160, 0.856);
 }
 
 .cta-card .btn:hover {
     background-color: var(--golden-tone-yellow);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(239, 218, 160, 0.8);
+    box-shadow: 0 6px 15px rgba(239, 218, 160, 0.933);
 }
 
 /*------------------C2A SERVICES--------------------*/
