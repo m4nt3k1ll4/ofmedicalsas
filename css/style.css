@@ -389,7 +389,7 @@ body.mobile-menu-open .mobile-menu {
 
 .contact-list i {
     font-size: 1.2rem;
-    color: var(--golden-yellow);
+    color: var(--golden-tone-yellow);
     margin-right: 1rem;
     margin-top: 0.25rem;
 }
@@ -565,7 +565,7 @@ body.mobile-menu-open .mobile-menu {
     font-size: 1rem;
     border-radius: 50px;
     transition: all 0.3s ease;
-    
+
 }
 /* =================================================================== */
 /* MEDIA QUERIES EXCLUSIVAS PARA EL CATÁLOGO (VERSIÓN FINAL) */
@@ -1026,7 +1026,7 @@ body.mobile-menu-open .mobile-menu {
         }
 
         .contact-list a:hover {
-            color: var(--golden-yellow);
+            color: var(--golden-tone-yellow);
             transform: scale(1.1);
         }
     }
