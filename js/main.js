@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const productCard = document.createElement('div');
                     productCard.className = 'product-card';
                     productCard.dataset.category = product.category;
-                    const buttonClass = product.category === 'verdepower' ? 'btn-verdepower' : 'btn-primary';
+                    const buttonClass = product.category === 'verdepower' ? 'btn-primary' : 'btn-primary';
 
                     productCard.innerHTML = `
                         <div class="product-image">

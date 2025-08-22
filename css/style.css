@@ -486,8 +486,8 @@ body.mobile-menu-open .mobile-menu {
 }
 
 .filter-btn {
-    background-color: var(--golden-yellow);
-    border: 1px var(--golden-yellow);
+    background-color: var(--golden-tone-yellow);
+    border: 1px var(--golden-tone-yellow);
     color: var(--dark-blue);
     padding: 0.8rem 2rem;
     border-radius: 50px;
@@ -508,7 +508,8 @@ body.mobile-menu-open .mobile-menu {
     background-color: var(--golden-tone-yellow);
     color: var(--dark-blue);
     border-color: var(--golden-yellow);
-    box-shadow: 0 4px 12px rgba(239, 218, 160, 0.6);
+    box-shadow: 0 5px 15px rgba(226, 191, 64, 0.885);
+    transform: translateY(-2px);
 }
 
 .product-grid {
@@ -528,11 +529,12 @@ body.mobile-menu-open .mobile-menu {
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgb(2, 13, 61);
 }
 
 .product-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 5px 15px rgb(1, 13, 61);
 }
 
 .product-card .product-image img {
@@ -559,41 +561,42 @@ body.mobile-menu-open .mobile-menu {
 
 .product-card .btn-primary {
     width: 100%;
+    padding: 0.8rem 0;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    
 }
+/* =================================================================== */
+/* MEDIA QUERIES EXCLUSIVAS PARA EL CATÁLOGO (VERSIÓN FINAL) */
+/* =================================================================== */
+
 @media (max-width: 768px) {
-    /* ... (aquí van el resto de tus reglas para móvil como .header, .hero, etc.) ... */
-
-    /* ============================================================= */
-    /* ✨ NUEVOS ESTILOS PARA EL CATÁLOGO ESTILO MERCADOLIBRE ✨ */
-    /* ============================================================= */
-
-    /* 1. Configura la cuadrícula de 2 columnas */
+    /* Se aplica el grid de 2 columnas */
     .product-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-        padding: 0 1rem 4rem; /* Menos padding lateral y vertical */
+        gap: 1.5rem;
+        padding: 0 1rem 4rem;
     }
 
-    /* 2. Ajusta la altura de la imagen en la tarjeta */
+    /* Ajustes para la tarjeta compacta */
     .product-card .product-image {
-        height: 180%; /* Reduce la altura para que la tarjeta sea más compacta */
+        height: 100%;
     }
 
-    /* 3. Ajusta el contenido interno de las tarjetas */
     .product-card .product-info {
-        padding: 1rem; /* Menos espaciado interno */
+        padding: 0.8rem;
     }
 
     .product-card .product-name {
-        font-size: 0.9rem; /* Texto del título más pequeño */
+        font-size: 0.85rem;
         margin-bottom: 1rem;
         line-height: 1.4;
     }
 
-    /* 4. Ajusta el botón para que quepa bien */
     .product-card .btn-primary {
-        padding: 0.6rem 1rem;
-        font-size: 0.85rem;
+        padding: 0.6rem;
+        font-size: 0.8rem;
     }
 }
 
