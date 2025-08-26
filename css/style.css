@@ -101,7 +101,7 @@ body {
 }
 
 .navbar a:hover {
-    color: var(--golden-yellow);
+    color: var(--golden-tone-yellow);
 }
 
 .header-right {
@@ -297,9 +297,10 @@ body.mobile-menu-open .mobile-menu {
     border-top-color: var(--golden-tone-yellow);
 }
 
-.cta-card.services-cta h2{
+.cta-card.services-cta h2 {
     color: var(--dark-blue);
 }
+
 .cta-card.services-cta p {
     color: var(--text-color);
 }
@@ -435,42 +436,6 @@ body.mobile-menu-open .mobile-menu {
     }
 }
 
-
-/* ======================= ESTILOS VERDEPOWER CATALOGO ======================= */
-/* .filter-btn[data-category='verdepower'] {
-    border-color: var(--vp-green);
-    color: var(--vp-green);
-}
-
-.filter-btn[data-category='verdepower']:hover {
-    background-color: var(--vp-green);
-    color: var(--white);
-}
-
-.filter-btn[data-category='verdepower'].active {
-    background: var(--vp-green);
-    color: var(--white);
-    border-color: var(--vp-green);
-    box-shadow: 0 4px 15px rgba(97, 167, 86, 0.3);
-}
-
-.product-card[data-category='verdepower'] {
-    border-top: 4px solid var(--vp-green);
-}
-
-.btn-verdepower {
-    background: var(--vp-green);
-    color: var(--white);
-    border: none;
-    box-shadow: none;
-}
-
-.btn-verdepower:hover {
-    background: #529148;
-    transform: none;
-    box-shadow: none;
-} */
-
 /* ======================= PÁGINA DE CATÁLOGO ======================= */
 .catalog-header {
     padding-top: 5rem;
@@ -567,11 +532,13 @@ body.mobile-menu-open .mobile-menu {
     transition: all 0.3s ease;
 
 }
+
 /* =================================================================== */
 /* MEDIA QUERIES EXCLUSIVAS PARA EL CATÁLOGO (VERSIÓN FINAL) */
 /* =================================================================== */
 
 @media (max-width: 768px) {
+
     /* Se aplica el grid de 2 columnas */
     .product-grid {
         grid-template-columns: 1fr 1fr;
@@ -737,68 +704,101 @@ body.mobile-menu-open .mobile-menu {
 }
 
 /* =================================================================== */
-/* ESTILOS PARA LA PÁGINA DE SERVICIOS (VERSIÓN FINAL) */
+/* ESTILOS PARA EL SLIDER DE SERVICIOS (VERSIÓN FINAL CON SLIDER-INNER) */
 /* =================================================================== */
-
-.marquee-container {
-    padding: 2rem 0;
+.slider-container {
+    position: relative;
+    width: 100%;
 }
 
-.marquee-track {
+.slider-viewport {
+    overflow: hidden;
+    cursor: grab;
+    padding: 0 15px; /* Espacio lateral para sombras */
+}
+
+.slider-viewport:active {
+    cursor: grabbing;
+}
+
+/* NUEVO: colchón interno para sombras */
+.slider-inner {
+    padding: 25px 15px 35px;   /* aire arriba, laterales e inferior */
+    box-sizing: border-box;
+}
+
+.slider-track {
+    display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
+    gap: 20px; /* Espaciado fijo entre tarjetas */
 }
 
 .service-item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
     flex-shrink: 0;
-    width: 320px;
-    height: 250px;
-    padding: 2rem;
-    margin: 0 1rem;
+    padding: 2rem 1.5rem;
+    height: 280px;
     background-color: var(--white);
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    border: 1px solid #f0f0f0;
     text-align: center;
-}
+    border: 1px solid #f0f0f0;
+    box-sizing: border-box;
 
-/* ✨ CORRECCIÓN: Se combinan :hover y :active para que funcione en móvil */
-.service-item:hover,
-.service-item:active {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.service-item i {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--dark-blue);
+    /* Sombra amplia y visible */
+    box-shadow: 0 12px 28px rgba(2, 13, 61, 0.18),
+                0 2px 8px rgba(2, 13, 61, 0.08);
     transition: var(--transition);
 }
 
-/* ✨ CORRECCIÓN: Se combinan :hover y :active para el ícono */
 .service-item:hover i,
 .service-item:active i {
     color: var(--golden-tone-yellow);
     transform: translateY(-5px);
+    transition: var(--transition);
+}
+
+.service-item i {
+    font-size: 2.5rem;
+    color: var(--dark-blue);
 }
 
 .service-item-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--dark-blue);
     line-height: 1.4;
-    flex-grow: 1;
 }
 
 .service-item .btn {
-    width: 100%;
+    width: 90%;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 2.5rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot.active {
+    background-color: var(--golden-tone-yellow);
+    transform: scale(1.2);
 }
 
 .cta-button-container {
@@ -806,86 +806,38 @@ body.mobile-menu-open .mobile-menu {
     margin-top: 3rem;
 }
 
-/* --- ESTILOS PARA ESCRITORIO Y TABLET (Más de 768px) --- */
-@media (min-width: 769px) {
-    .marquee-container {
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        overflow: hidden;
-    }
+/* --- Tamaños de las tarjetas por dispositivo --- */
 
-    .marquee-track {
-        width: calc(352px * 14);
-        animation: scroll 40s linear infinite;
-    }
-
-    .marquee-container:hover .marquee-track {
-        animation-play-state: paused;
-    }
-
-    @keyframes scroll {
-        from { transform: translateX(0); }
-        to { transform: translateX(calc(-352px * 7)); }
-    }
-}
-
-/* --- ESTILOS PARA MÓVILES (Menos de 768px) --- */
-@media (max-width: 768px) {
-    .marquee-container {
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        touch-action: pan-x;
-        scrollbar-width: none;
-    }
-
-    .marquee-container::-webkit-scrollbar {
-        display: none;
-    }
-
-    .marquee-track {
-        width: max-content;
-        /* ✨ CORRECCIÓN: Se ajusta el padding para evitar el scroll a la izquierda */
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
-
+/* Escritorio grande: 5 tarjetas */
+@media (min-width: 1201px) {
     .service-item {
-        width: 75vw;
-        max-width: 300px;
-        height: auto;
-        padding: 1.5rem;
+        flex-basis: calc((100% - (20px * 4)) / 5);
     }
 }
 
-/* ======================= PATRÓN DE FONDO ======================= */
-/* .combined-section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-} */
-
-
-.patron-borroso {
-    position: relative;
-    z-index: 1;
-    background-color: var(--soft-blue);
+/* Escritorio pequeño: 4 tarjetas */
+@media (max-width: 1200px) and (min-width: 993px) {
+    .service-item {
+        flex-basis: calc((100% - (20px * 3)) / 4);
+    }
 }
 
-/* .patron-borroso::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../assets/backgrounds/background1.png');
-    background-repeat: repeat;
-    filter: blur(3px);
-    opacity: 0.5;
-    z-index: -1;
-} */
+/* Tablet: 2 tarjetas */
+@media (max-width: 992px) and (min-width: 577px) {
+    .service-item {
+        flex-basis: calc((100% - 20px) / 2);
+    }
+}
+
+/* Móvil: 1 tarjeta */
+@media (max-width: 576px) {
+    .service-item {
+        flex-basis: 100%;
+        height: auto;
+    }
+}
+
+
 
 
 /* =================================================================== */
