@@ -32,12 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Distancia real (px) desde el inicio del track al primer item de la página
-function pageOffsetPx(pageIndex) {
-    const i = pageStartItem(pageIndex);
-    const el = items[i];
-    if (!el) return 0;
-    return Math.round(el.offsetLeft); // ← aquí empieza en offsetLeft exacto
-}
+    function pageOffsetPx(pageIndex) {
+        const i = pageStartItem(pageIndex);
+        const targetItem = items[i];
+        const firstItem = items[0];
+        if (!targetItem || !firstItem) return 0;
+        // La distancia correcta es la diferencia de offsets desde el primer elemento.
+        // Esto independiza el cálculo del padding del contenedor.
+        return Math.round(targetItem.offsetLeft - firstItem.offsetLeft);
+    }
+
 
     function rebuildDots() {
         dotsContainer.innerHTML = '';
