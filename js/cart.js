@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         message += "Quedo atento a su pronta respuesta. ¡Gracias!";
 
-        const phoneNumber = "573001234567"; // ¡IMPORTANTE! Reemplazar con el número del cliente
+        const phoneNumber = "573176408253"; // ¡IMPORTANTE! Reemplazar con el número del cliente
         const encodedMessage = encodeURIComponent(message);
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
         
