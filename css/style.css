@@ -737,7 +737,8 @@ body.mobile-menu-open .mobile-menu {
 .service-item {
     display: flex;
     flex-direction: column;
-    /* Se elimina justify-content y align-items para un control más preciso */
+    justify-content: center;
+    align-items: center;
     gap: 1.2rem;
     flex-shrink: 0;
     padding: 2rem 1.5rem;
