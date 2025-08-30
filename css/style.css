@@ -496,6 +496,12 @@ body.mobile-menu-open .mobile-menu {
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgb(2, 13, 61);
 }
+.product-short-desc {
+    font-size: 0.9rem;
+    color: var(--slate-gray);
+    margin-bottom: 1.5rem;
+    min-height: 40px; /* Le da una altura mínima para alinear los botones */
+}
 
 .product-card:hover {
     transform: translateY(-8px);

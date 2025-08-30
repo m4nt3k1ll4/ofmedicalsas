@@ -81,35 +81,37 @@ const productos = [
     image: "./assets/images/med-placeholder.png"
   },
 
-  // --- Verde Power ---
+  // --- Verde Power (Productos Actualizados) ---
   {
     id: 14,
-    name: "Aceite Esencial CBD 1000mg - Verde Power",
+    name: "GEL VERDE POWER TUBO X 120 ML",
     category: "verdepower",
-    image: "./assets/images/verde-placeholder.png"
+    short_desc: "GEL DE CANNABIS",
+    long_desc: "Producto a base de cannabis medicinal para dolores musculares y articulares.",
+    image: "./assets/images/GEL_VERDE_POWER_120_ML.png" // Asumiendo que nombrarás el archivo así
   },
   {
     id: 15,
-    name: "Crema Tópica de Cannabis Medicinal - Verde Power",
+    name: "GEL VERDE POWER SACHET X 30 ML",
     category: "verdepower",
-    image: "./assets/images/verde-placeholder.png"
+    short_desc: "GEL DE CANNABIS",
+    long_desc: "Producto a base de cannabis medicinal para dolores musculares y articulares.",
+    image: "./assets/images/GEL_VERDE_POWER_30_ML.png"
   },
   {
     id: 16,
-    name: "Bálsamo Muscular CBD Efecto Frío - Verde Power",
+    name: "AEROSOL VERDE POWER 160 ML",
     category: "verdepower",
-    image: "./assets/images/verde-placeholder.png"
+    short_desc: "SPRAY DE CANNABIS",
+    long_desc: "Producto a base de cannabis medicinal para dolores musculares y articulares.",
+    image: "./assets/images/AEROSOL_VERDE_POWER_160_ML.png"
   },
   {
     id: 17,
-    name: "Gotas Sublinguales CBD 500mg - Verde Power",
+    name: "ACEITE ESENCIAL DE CANNABIS CBD",
     category: "verdepower",
-    image: "./assets/images/verde-placeholder.png"
-  },
-  {
-    id: 18,
-    name: "Gomitas de CBD para el Sueño y la Ansiedad - Verde Power",
-    category: "verdepower",
-    image: "./assets/images/verde-placeholder.png"
+    short_desc: "ACEITE DE CANNABIS MEDICINAL CBD",
+    long_desc: "Aceite a base de cannabis medicinal para insomnio, estrés, ansiedad, dolores musculares y articulares.",
+    image: "./assets/images/ACEITE_CBD.png"
   }
 ];

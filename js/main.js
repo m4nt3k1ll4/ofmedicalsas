@@ -26,39 +26,40 @@ document.addEventListener('DOMContentLoaded', () => {
     if (productGrid && filterBtns.length > 0) {
 
         const renderProducts = (category = 'all') => {
-            productGrid.innerHTML = '';
+    productGrid.innerHTML = '';
 
-            const filteredProducts = productos.filter(product => {
-                if (category === 'all') return true;
-                return product.category === category;
-            });
+    const filteredProducts = productos.filter(product => {
+        if (category === 'all') return true;
+        return product.category === category;
+    });
 
-            if (filteredProducts.length === 0) {
-                if (noResultsMessage) noResultsMessage.style.display = 'block';
-            } else {
-                if (noResultsMessage) noResultsMessage.style.display = 'none';
+    if (filteredProducts.length === 0) {
+        if (noResultsMessage) noResultsMessage.style.display = 'block';
+    } else {
+        if (noResultsMessage) noResultsMessage.style.display = 'none';
 
-                filteredProducts.forEach(product => {
-                    const productCard = document.createElement('div');
-                    productCard.className = 'product-card';
-                    productCard.dataset.category = product.category;
-                    const buttonClass = product.category === 'verdepower' ? 'btn-primary' : 'btn-primary';
+        filteredProducts.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card';
+            productCard.dataset.category = product.category;
 
-                    productCard.innerHTML = `
-                        <div class="product-image">
-                            <img src="${product.image}" alt="${product.name}">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">${product.name}</h3>
-                            <button class="btn ${buttonClass}" onclick="addToCart(${product.id})">
-                                Añadir a Cotización
-                            </button>
-                        </div>
-                    `;
-                    productGrid.appendChild(productCard);
-                });
-            }
-        };
+            // ✨ REFACTORIZACIÓN: Se elimina la lógica de "buttonClass". Ahora todos los botones son iguales.
+            productCard.innerHTML = `
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">${product.name}</h3>
+                    <p class="product-short-desc">${product.short_desc || ''}</p> 
+                    <button class="btn btn-primary" onclick="addToCart(${product.id})">
+                        Añadir a Cotización
+                    </button>
+                </div>
+            `;
+            productGrid.appendChild(productCard);
+        });
+    }
+};
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
