@@ -2,33 +2,38 @@ const productos = [
   // --- Dispositivos Médicos ---
   {
     id: 1,
-    name: "Monitor de Signos Vitales Avanzado",
+    name: "TENSIOMETRO DIGITAL DE BRAZO CON ALTAVOZ",
     category: "dispositivos",
-    image: "./assets/images/disp-placeholder.png"
+    short_desc: "Dispositivo para medir la presión arterial de manera automática. Es fácil de usar y proporciona lecturas rápidas y precisas con voz, ayudando a controlar la salud cardiovascular.",
+    image: "./assets/images/TENSIOMETRO_DIGITAL_DE_BRAZO_CON_ALTAVOZ.png" // Asumiendo que nombrarás el archivo así
   },
   {
     id: 2,
-    name: "Oxímetro de Pulso Digital de Dedo",
+    name: "TENSIOMETRO DIGITAL PANTALLA LCD",
     category: "dispositivos",
-    image: "./assets/images/disp-placeholder.png"
+    short_desc: "Dispositivo para medir la presión arterial de manera automática. Es fácil de usar y proporciona lecturas rápidas y precisas, ayudando a controlar la salud cardiovascular.",
+    image: "./assets/images/TENSIOMETRO_DIGITAL_PANTALLA_LCD.png" // Asumiendo que nombrarás el archivo así
   },
   {
     id: 3,
-    name: "Tensiómetro de Brazo Automático",
+    name: "KIT FONENDO Y TENSIOMETRO ROYAL",
     category: "dispositivos",
-    image: "./assets/images/disp-placeholder.png"
+    short_desc: "Dispositivo para medir la presión arterial de manera automática. Es fácil de usar y proporciona lecturas rápidas y precisas con voz, ayudando a controlar la salud cardiovascular.",
+    image: "./assets/images/KIT_FONENDO_Y_TENSIOMETRO_ROYAL.png" // Asumiendo que nombrarás el archivo así
   },
   {
     id: 4,
-    name: "Kit de Sutura Quirúrgica Desechable",
+    name: "NEBULIZADOR DE COMPRESION MEDICA",
     category: "dispositivos",
-    image: "./assets/images/disp-placeholder.png"
+    short_desc: "Dispositivo para tratar afecciones respiratorias como el asma o la bronquitis. Es ideal para personas que tienen dificultad para usar inhaladores.",
+    image: "./assets/images/NEBULIZADOR_DE_COMPRESION_MEDICA.png" // Asumiendo que nombrarás el archivo así
   },
   {
     id: 5,
-    name: "Bomba de Infusión Volumétrica",
+    name: "OXIMETRO DE PULSO CON CURVA",
     category: "dispositivos",
-    image: "./assets/images/disp-placeholder.png"
+    short_desc: "Dispositivo portátil que mide la saturación de oxígeno en la sangre (SpO2) y también la frecuencia cardíaca.",
+    image: "./assets/images/OXIMETRO_DE_PULSO_CON_CURVA.png" // Asumiendo que nombrarás el archivo así
   },
   {
     id: 6,
